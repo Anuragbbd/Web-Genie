@@ -15,6 +15,8 @@ import UserProvider from "./context/UserProvider";
 import AdminProvider from "./context/AdminProvider";
 import { useState } from "react";
 import Contact from "./components/main/Contact";
+import SearchSetup from "./components/user/SearchSetup";
+import SearchSystem from "./plugin/SearchSystem";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(
@@ -58,7 +60,9 @@ function App() {
               path="user"
             >
               <Route path="profile" element={<UserProfile />} />
+              <Route path="searchsetup" element={<SearchSetup />} />
             </Route>
+            <Route path="search" element={<SearchSystem />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </UserProvider>
