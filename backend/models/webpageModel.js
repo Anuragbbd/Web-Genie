@@ -4,7 +4,7 @@ const userSchema = new Schema({
   title: { type: String, default: 'Untitled' },
   description: { type: String },
   keywords: { type: Array, default: [] },
-  user: { type: Types, ref: 'user' },
+  user: { type: Types.ObjectId, ref: 'user' },
   created_at: Date,
   updated_at: Date,
 });
