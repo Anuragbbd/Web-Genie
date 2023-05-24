@@ -61,8 +61,8 @@ const Header = () => {
                 </>
               )}
               <li className="nav-item">
-                <NavLink className="nav-link" to="/main/browse">
-                  Browse
+                <NavLink className="nav-link" to="/user/webpagemanager">
+                  Manage Webpage Data
                 </NavLink>
               </li>
               <li className="nav-item">

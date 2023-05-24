@@ -18,6 +18,7 @@ import Contact from "./components/main/Contact";
 import SearchSetup from "./components/user/SearchSetup";
 import SearchSystem from "./plugin/SearchSystem";
 import About from "./components/main/About";
+import WebpageManager from "./components/user/WebpageManager";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(
@@ -63,6 +64,7 @@ function App() {
             >
               <Route path="profile" element={<UserProfile />} />
               <Route path="searchsetup" element={<SearchSetup />} />
+              <Route path="webpagemanager" element={<WebpageManager />} />
             </Route>
             <Route path="search" element={<SearchSystem />} />
             <Route path="*" element={<NotFound />} />
