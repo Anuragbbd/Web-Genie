@@ -17,6 +17,7 @@ import { useState } from "react";
 import Contact from "./components/main/Contact";
 import SearchSetup from "./components/user/SearchSetup";
 import SearchSystem from "./plugin/SearchSystem";
+import About from "./components/main/About";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(
@@ -49,6 +50,7 @@ function App() {
               <Route element={<Signin />} path="signin" />
               <Route element={<Signup />} path="signup" />
               <Route element={<Contact />} path="contact" />
+              <Route element={<About />} path="about" />
             </Route>
 
             <Route

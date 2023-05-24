@@ -9,3 +9,11 @@
   border: 1px solid black;
   height: 80vh;
 }
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: black;
+}
