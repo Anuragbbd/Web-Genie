@@ -50,17 +50,18 @@ const Signup = () => {
       <div style={{backgroundColor:'#FFFAF4'}}>
 
       <div className="container h-100">
+        <div className="row">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-lg-12 col-xl-11">
-            <div className="card text-black" style={{ borderRadius: 25 }}>
-              <div className="card-body p-md-5">
-                <div className="row justify-content-center">
-                  <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+            <div className="card text-black shadow-0 pb-4" style={{ borderRadius: 25 }}>
+              <div className="card-body  p-md-5">
+                <div  className="row justify-content-center ">
+                  <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1"style={{backgroundColor:'white'}}>
                     <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
                       Sign up
                     </p>
                     <form
-                      className="mx-1 mx-md-4"
+                      className="mx-1 mx-md-4 p-2  " style={{backgroundColor:'white',width:"55vh" }}
                       onSubmit={signupform.handleSubmit}
                     >
                       <div className="d-flex flex-row align-items-center mb-4">
@@ -162,23 +163,28 @@ const Signup = () => {
                           Register
                         </button>
                       </div>
-                      <p className="ms-5 small fw-bold mt-2 pt-1 mb-0 text-center">Already a user?{" "}
+                      <p className="ms-4 small fw-bold mt-2 pt-1 mb-0 text-center">Already a user?{" "}
                       <Link to='/main/signin'>SignIn</Link></p>
                     </form>
                   </div>
                   <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                    <img
+                    
+                    <img 
                       src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                      className="img-fluid"
+                      className="img-fluid rounded "
                       alt="Sample image"
                     />
                   </div>
                 </div>
               </div>
             </div>
+            <div>
+              
+            </div>
           </div>
         </div>
       </div>        
+      </div>
       </div>
     </section>
   );

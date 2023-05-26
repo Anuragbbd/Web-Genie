@@ -6,6 +6,7 @@ const Home = () => {
       <h1 className="text-center text-dark display-1 fw-bold p-5">
         Home Page
       </h1>
+      
     </div>
   )
 }

@@ -54,7 +54,7 @@ const Signin = () => {
 
   return (
     <section className="vh-100">
-    <div  style={{backgroundColor:'#FFFAF4'}}>
+    <div  style={{backgroundColor:'#FEF2F4'}}>
     <div className="container">
         <div
           className="row d-flex justify-content-center align-items-center "
@@ -67,7 +67,7 @@ const Signin = () => {
               alt="Sample image"
             />
           </div>
-          <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 p-2"style={{backgroundColor:'white',height:"60vh",width:"50vh"}}>
             <form onSubmit={loginform.handleSubmit}>
               <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                 <p className="lead fw-normal mb-0 me-3 text-dark">Sign in with</p>
