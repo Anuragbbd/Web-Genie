@@ -33,7 +33,7 @@ const Header = () => {
             {/* Navbar brand */}
             <a className="navbar-brand mt-2 mt-lg-0" href="#">
             <img
-              src="LOGO.png"
+              src="/LOGO.png"
               height={15}
               alt="MDB Logo"
               loading="lazy"
