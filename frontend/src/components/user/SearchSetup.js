@@ -61,7 +61,7 @@ const SearchSetup = () => {
                     borderTopLeftRadius: ".3rem",
                     borderTopRightRadius: ".3rem",
                   }}
-                  alt="Sample photo"
+                  alt="Sample"
                 />
                 <div className="card-body p-4 p-md-5">
                   <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">
