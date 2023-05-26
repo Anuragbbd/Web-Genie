@@ -67,7 +67,7 @@ const Signin = () => {
               alt="Sample image"
             />
           </div>
-          <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 p-2"style={{backgroundColor:'white',height:"60vh",width:"50vh"}}>
+          <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 p-5 "style={{backgroundColor:'white',height:"65vh",width:"50vh", borderRadius:20}}>
             <form onSubmit={loginform.handleSubmit}>
               <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                 <p className="lead fw-normal mb-0 me-3 text-dark">Sign in with</p>

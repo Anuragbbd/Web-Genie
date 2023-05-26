@@ -12,7 +12,7 @@ const Contact = () => {
             <img src="\contact us pic.jpg" alt="contact us photo" className='w-100'/>
           </div>
           <div className="col-md-6 my-5 ">
-            <div className="card my-5 mx-auto" style={{ height: '75vh' ,width:'60vh' }}>
+            <div className="card my-5 mx-auto  p-2" style={{ height: '75vh' ,width:'55vh' }}>
               <div className="card-body">
                 <h1 className="card-title text-center text-dark mb-4">Get in Touch</h1>
                 <form>
