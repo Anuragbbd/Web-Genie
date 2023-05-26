@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import app_config from "../../config";
+import { useFormik } from "formik";
 
 const WebpageManager = () => {
   const [webpageList, setWebpageList] = useState([]);
@@ -67,6 +68,15 @@ const WebpageManager = () => {
     fetchWebpagesData();
   }, []);
 
+  const webpageForm = useFormik({
+    title: '',
+    description: '',
+    keywords: '',
+    user: currentuser._id,
+    created_at: new Date(),
+    updated_at: new Date()
+  });
+
   return (
     <div>
       <>
@@ -81,7 +91,7 @@ const WebpageManager = () => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  Modal title
+                  Add New Webpage
                 </h5>
                 <button
                   type="button"
@@ -90,7 +100,11 @@ const WebpageManager = () => {
                   aria-label="Close"
                 />
               </div>
-              <div className="modal-body">...</div>
+              <div className="modal-body">
+                <form onSubmit={webpageForm.handleSubmit}>
+                  <label>Title</label>
+                </form>
+              </div>
               <div className="modal-footer">
                 <button
                   type="button"
@@ -98,9 +112,6 @@ const WebpageManager = () => {
                   data-mdb-dismiss="modal"
                 >
                   Close
-                </button>
-                <button type="button" className="btn btn-primary">
-                  Save changes
                 </button>
               </div>
             </div>
@@ -120,8 +131,7 @@ const WebpageManager = () => {
               data-mdb-toggle="modal"
               data-mdb-target="#exampleModal"
             >
-              <i class="fa fa-plus-circle" aria-hidden="true"></i> Launch demo
-              modal
+              <i class="fa fa-plus-circle" aria-hidden="true"></i> Add New Webpage
             </button>
             <table className="table table-striped">
               <thead>
