@@ -23,34 +23,36 @@ const Header = () => {
           {/* Navbar brand */}
           <a className="navbar-brand mt-2 mt-lg-0" href="#">
             <img
-              src="/LOGO.png"
-              height={15}
+              src="/WG-Logo.png"
+              height={50}
               alt="MDB Logo"
               loading="lazy"
             />
+            
+            <h1 style={{color:"green"}}>WEBGENIE</h1>
           </a>
           {/* Left links */}
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <NavLink className="nav-link" to="/main/home">
-                Home
+                HOME
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/main/about">
-                AboutUs
+                ABOUT US
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/main/contact">
-                Contact
+                CONTACT US
               </NavLink>
             </li>
           </ul>
           <ul className="navbar-nav mb-2 mb-lg-0">
-            <li className="nav-item me-2">
+            <li className="nav-item me-4">
               <NavLink className="btn btn-outline-white" to="/main/signup">
-                Create Account
+                SignUp
               </NavLink>
             </li>
             <li className="nav-item">

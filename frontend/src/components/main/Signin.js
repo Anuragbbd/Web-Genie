@@ -54,11 +54,11 @@ const Signin = () => {
 
   return (
     <section className="vh-100">
-    <div  style={{backgroundColor:'#FEF2F4'}}>
+    <div  style={{backgroundColor:'#8B7E74'}}>
     <div className="container">
         <div
           className="row d-flex justify-content-center align-items-center "
-          style={{ minHeight: "90vh" }}
+          style={{ minHeight: "100vh" }}
         >
           <div className="col-md-9 col-lg-6 col-xl-5">
             <img
@@ -67,7 +67,7 @@ const Signin = () => {
               alt="Sample image"
             />
           </div>
-          <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 p-5 "style={{backgroundColor:'white',height:"65vh",width:"50vh", borderRadius:20}}>
+          <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 p-5 "style={{backgroundColor:'white',height:"70vh",width:"55vh", borderRadius:20}}>
             <form onSubmit={loginform.handleSubmit}>
               <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                 <p className="lead fw-normal mb-0 me-3 text-dark">Sign in with</p>

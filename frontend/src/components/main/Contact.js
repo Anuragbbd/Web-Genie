@@ -3,7 +3,7 @@ import React from 'react'
 const Contact = () => {
   return (
 
-    <div  style={{ backgroundColor: '#FFFAF4' }}>
+    <div  style={{ backgroundColor: '#8B7E74' }}>
 
       <div className="container ">
         <div className="row">
@@ -12,9 +12,9 @@ const Contact = () => {
             <img src="\contact us pic.jpg" alt="contact us photo" className='w-100'/>
           </div>
           <div className="col-md-6 my-5 ">
-            <div className="card my-5 mx-auto  p-2" style={{ height: '75vh' ,width:'55vh' }}>
+            <div className="card my-5 mx-auto  p-2" style={{ height: '78vh' ,width:'55vh' }}>
               <div className="card-body">
-                <h1 className="card-title text-center text-dark mb-4">Get in Touch</h1>
+                <h1 className="card-title text-center text-black mb-4">Get in Touch</h1>
                 <form>
                   {/* Name input */}
                   <div className=" mb-4">

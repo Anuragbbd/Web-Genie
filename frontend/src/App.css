@@ -17,3 +17,7 @@ flex: 1;
 height: 1px;
 background: black;
 }
+.aboutus-page{
+  border: 1px solid black
+  min-height 100vh
+}
