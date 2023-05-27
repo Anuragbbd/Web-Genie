@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import annyang from 'annyang';
+import { useNavigate } from 'react-router-dom';
 
 const SearchSystem = () => {
   // const [annyang, setAnnyang] = useState(window.annyang);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     //   initVoiceListen();
@@ -10,6 +13,29 @@ const SearchSystem = () => {
   }, []);
 
   const [listening, setListening] = useState(false);
+
+  const webpagesList = [
+    {
+      name: 'About',
+      address: '/main/about'
+    },
+    {
+      name: 'Contact',
+      address: '/main/contact'
+    },
+    {
+      name: 'Home',
+      address: '/main/home'
+    },
+    {
+      name: 'Signin',
+      address: '/main/signin'
+    },
+    {
+      name: 'Signup',
+      address: '/main/signup'
+    }
+  ];
 
   const init = () => {
     const commands = {
@@ -20,6 +46,18 @@ const SearchSystem = () => {
       'say :message': (message) => {
         console.log('You said:', message);
         speak('You said: ' + message);
+      },
+      'open :pagename page': (pagename) => {
+        console.log(pagename);
+        const webpage = webpagesList.find((w) => w.name.toLowerCase() === pagename.toLowerCase());
+        console.log(webpage);
+        if (webpage) {
+          console.log(`Opening ${webpage.name} Page`);
+          speak(`Opening ${webpage.name} Page`);
+          setTimeout(() => {
+            navigate(webpage.address);
+          }, 2000);
+        }
       }
     };
 
@@ -87,7 +125,9 @@ const SearchSystem = () => {
               </div>
               <div className="modal-body">
                 <input className="form-control form-control-lg" />
-                <button className="btn btn-primary" onClick={startListening}>{listening ? 'Listening...' : 'Click To Speak'}</button>
+                <button className="btn btn-primary" onClick={startListening}>
+                  {listening ? 'Listening...' : 'Click To Speak'}
+                </button>
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-mdb-dismiss="modal">
