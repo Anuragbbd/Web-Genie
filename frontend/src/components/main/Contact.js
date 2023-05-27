@@ -8,8 +8,8 @@ const Contact = () => {
       <div className="container ">
         <div className="row">
 
-          <div className="col-md-6 my-5">
-            <img src="\contact us pic.jpg" alt="contact us photo" className='w-100'/>
+          <div className="col-md-6 my-5  ">
+            <img src="\contact us pic.jpg" alt="contact us photo" className='w-100 img-thumbnail'/>
           </div>
           <div className="col-md-6 my-5 ">
             <div className="card my-5 mx-auto  p-2" style={{ height: '78vh' ,width:'55vh' }}>

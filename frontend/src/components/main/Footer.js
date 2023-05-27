@@ -2,9 +2,10 @@ import React from "react";
 
 const Footer = () => {
   return (
+
     <footer className="text-center text-lg-start bg-dark text-white">
       {/* Section: Social media */}
-      <section className="d-flex justify-content-center justify-content-lg-between p-2 border-bottom">
+      <section className=" d-flex justify-content-center  p-2 border-bottom">
         {/* Left */}
         <div className="me-5 d-none d-lg-block">
           <span>Get connected with us on social networks:</span>
@@ -140,6 +141,7 @@ const Footer = () => {
         </a>
       </div>
       {/* Copyright */}
+
     </footer>
   );
 };

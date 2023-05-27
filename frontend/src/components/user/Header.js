@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         {/* Container wrapper */}
         <div className="container">
           {/* Toggle button */}
@@ -38,7 +38,7 @@ const Header = () => {
               alt="Website Logo"
               loading="lazy"
             />
-            <h1>WEBGENIE</h1>
+            <h1 style={{color:'green'}}>WEBGENIE</h1>
             </a>
             {/* Left links */}
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">

@@ -6,7 +6,12 @@ const Home = () => {
       <h1 className="text-center text-dark display-1 fw-bold p-4">
         Home Page
       </h1>
-      
+
+      <div className='bg-image'
+        style={{ backgroundImage: `url('/home page BG.jpg')` }}>
+
+      </div>
+
     </div>
   )
 }
