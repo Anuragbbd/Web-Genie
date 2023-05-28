@@ -3,7 +3,7 @@ import React from 'react'
 const About = () => {
   return (
     <div class="bg-image" 
-       style={{backgroundImage: `url('/about us page BG.jpg')`, backgroundSize: 'cover', backgroundPosition: 'bottom' }}>
+       style={{backgroundImage: `url('/about-us BG.jpg')`, backgroundSize: 'cover', backgroundPosition: 'bottom' }}>
     <div className='container align-item center vh-100' >
       <div className=" mt-3">
         <div className="card-body">
