@@ -21,6 +21,7 @@ const WebpageManager = () => {
         'Content-Type': 'application/json'
       }
     });
+    console.log(res.status);
     if (res.status === 201) {
       const data = await res.json();
       console.log(data);
@@ -39,6 +40,7 @@ const WebpageManager = () => {
       return (
         <tr key={webpage._id}>
           <td>{webpage.title}</td>
+          <td>{webpage.address}</td>
           <td>{webpage.description}</td>
           <td>{webpage.keywords}</td>
           <td>
@@ -87,6 +89,7 @@ const WebpageManager = () => {
   const webpageForm = useFormik({
     initialValues: {
       title: '',
+      address: '',
       description: '',
       keywords: '',
       user: currentuser._id,
@@ -140,6 +143,9 @@ const WebpageManager = () => {
                 <form onSubmit={webpageForm.handleSubmit}>
                   <label>Title</label>
                   <input type="text" className="form-control mb-3" id="title" onChange={webpageForm.handleChange} value={webpageForm.values.title} />
+                  
+                  <label>Address</label>
+                  <input type="text" className="form-control mb-3" id="address" onChange={webpageForm.handleChange} value={webpageForm.values.address} />
 
                   <label>Description</label>
                   <input type="text" className="form-control mb-3" id="description" onChange={webpageForm.handleChange} value={webpageForm.values.description} />

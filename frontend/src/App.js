@@ -66,7 +66,7 @@ function App() {
               <Route path="searchsetup" element={<SearchSetup />} />
               <Route path="webpagemanager" element={<WebpageManager />} />
             </Route>
-            <Route path="search" element={<SearchSystem />} />
+            <Route path="search" element={<SearchSystem userid={'6469c8a166bc205c45ea9b23'} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </UserProvider>
