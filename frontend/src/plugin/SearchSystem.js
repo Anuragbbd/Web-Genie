@@ -2,10 +2,26 @@ import React, { useEffect, useState } from 'react';
 import annyang from 'annyang';
 import { useNavigate } from 'react-router-dom';
 
-const SearchSystem = () => {
+const SearchSystem = ({userid}) => {
   // const [annyang, setAnnyang] = useState(window.annyang);
 
   const navigate = useNavigate();
+  const url = 'http://localhost:5000';
+
+  const [webpagesList, setWebpagesList] = useState([]);
+
+  const fetchWebpagesData = async () => {
+    const response = await fetch(`${url}/webpage/getbyuser/${userid}`);
+    const data = await response.json();
+    console.log(data.result);
+    setWebpagesList(data.result);
+    // return data;
+  }
+
+  useEffect(() => {
+    fetchWebpagesData();
+  }, [])
+  
 
   useEffect(() => {
     //   initVoiceListen();
@@ -14,28 +30,28 @@ const SearchSystem = () => {
 
   const [listening, setListening] = useState(false);
 
-  const webpagesList = [
-    {
-      name: 'About',
-      address: '/main/about'
-    },
-    {
-      name: 'Contact',
-      address: '/main/contact'
-    },
-    {
-      name: 'Home',
-      address: '/main/home'
-    },
-    {
-      name: 'Signin',
-      address: '/main/signin'
-    },
-    {
-      name: 'Signup',
-      address: '/main/signup'
-    }
-  ];
+  // const webpagesList = [
+  //   {
+  //     name: 'About',
+  //     address: '/main/about'
+  //   },
+  //   {
+  //     name: 'Contact',
+  //     address: '/main/contact'
+  //   },
+  //   {
+  //     name: 'Home',
+  //     address: '/main/home'
+  //   },
+  //   {
+  //     name: 'Signin',
+  //     address: '/main/signin'
+  //   },
+  //   {
+  //     name: 'Signup',
+  //     address: '/main/signup'
+  //   }
+  // ];
 
   const init = () => {
     const commands = {
@@ -49,13 +65,14 @@ const SearchSystem = () => {
       },
       'open :pagename page': (pagename) => {
         console.log(pagename);
-        const webpage = webpagesList.find((w) => w.name.toLowerCase() === pagename.toLowerCase());
+        // console.log(webpagesList[0].keywords[0].split(',').map(key => key.trim().toLowerCase()).includes(pagename.toLowerCase()));
+        const webpage = webpagesList.find((w) => w.keywords[0].split(',').map(key => key.trim().toLowerCase()).includes(pagename.toLowerCase()));
         console.log(webpage);
         if (webpage) {
-          console.log(`Opening ${webpage.name} Page`);
-          speak(`Opening ${webpage.name} Page`);
+          console.log(`Opening ${webpage.title} Page`);
+          speak(`Opening ${webpage.title} Page`);
           setTimeout(() => {
-            navigate(webpage.address);
+            navigate('/main'+webpage.address);
           }, 2000);
         }
       }
