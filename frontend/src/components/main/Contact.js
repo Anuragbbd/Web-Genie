@@ -3,15 +3,15 @@ import React from 'react'
 const Contact = () => {
   return (
 
-    <div  style={{ backgroundColor: '#8B7E74' }}>
+    <div  style={{backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img/contact-us BG.jpg')`,backgroundSize: 'cover',backgroundPosition:'bottom' }}>
 
       <div className="container ">
         <div className="row">
 
-          <div className="col-md-6 my-5  ">
+          {/* <div className="col-md-6 my-5 ">
             <img src="/img/contact us pic.jpg" alt="contact us photo" className='w-100 img-thumbnail'/>
-          </div>
-          <div className="col-md-6 my-5 ">
+          </div> */}
+          {/* <div className="col-md-6 my-5 "> */}
             <div className="card my-5 mx-auto  p-2" style={{ height: '78vh' ,width:'55vh' }}>
               <div className="card-body">
                 <h1 className="card-title text-center text-black mb-4">Get in Touch</h1>
@@ -53,7 +53,7 @@ const Contact = () => {
                       id="form4Example4"
                       defaultChecked=""
                     />
-                    <label className="form-check-label" htmlFor="form4Example4">
+                    <label className="form-check-label text-black" htmlFor="form4Example4">
                       Send me a copy of this message
                     </label>
                   </div>
@@ -77,7 +77,7 @@ const Contact = () => {
         </div>
       </div>
 
-    </div>
+    // </div>
 
 
 
