@@ -64,7 +64,7 @@ const SearchSetup = () => {
                   alt="Sample"
                 />
                 <div className="card-body p-4 p-md-5">
-                  <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">
+                  <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 text">
                     Configure Your Plugin
                   </h3>
                   <form className="px-md-2">
