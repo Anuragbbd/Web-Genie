@@ -1,55 +1,47 @@
-import { useFormik } from "formik";
-import React from "react";
-import app_config from "../../config";
-import Swal from "sweetalert2";
+import { useFormik } from 'formik';
+import React from 'react';
+import app_config from '../../config';
+import Swal from 'sweetalert2';
 
 const SearchSetup = () => {
-
-  const {apiUrl} = app_config;
+  const { apiUrl } = app_config;
 
   const setupForm = useFormik({
     initialValues: {
-      siteName: "",
-      webpagesData: {},
-      options: {},
-      created_at: new Date(),
-      updated_at: new Date(),
+      siteName: '',
+      siteUrl: '',
+      theme : '',
+      created_at: new Date()
     },
-    onSubmit: async (values, {resetForm, setSubmitting}) => {
+    onSubmit: async (values, { resetForm, setSubmitting }) => {
       console.log(values);
       const res = await fetch(`${apiUrl}/user/add`, {
-        method: "POST",
+        method: 'POST',
         body: JSON.stringify(values),
         headers: {
-          "Content-Type": "application/json",
-        },
+          'Content-Type': 'application/json'
+        }
       });
       console.log(res.status);
       if (res.status === 201) {
         Swal.fire({
-          icon: "success",
-          title: "Success",
-          text: "User Registered Successfully!!",
+          icon: 'success',
+          title: 'Success',
+          text: 'User Registered Successfully!!'
         });
-        
       } else {
         Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Some Error Occured!!",
+          icon: 'error',
+          title: 'Error',
+          text: 'Some Error Occured!!'
         });
       }
     }
   });
 
-
-
   return (
     <div>
-      <section
-        className="h-100 h-custom"
-        style={{ backgroundColor: "#8fc4b7" }}
-      >
+      <section className="h-100 h-custom" style={{ backgroundColor: '#8fc4b7' }}>
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-lg-8 col-xl-6">
@@ -58,44 +50,32 @@ const SearchSetup = () => {
                   src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
                   className="w-100"
                   style={{
-                    borderTopLeftRadius: ".3rem",
-                    borderTopRightRadius: ".3rem",
+                    borderTopLeftRadius: '.3rem',
+                    borderTopRightRadius: '.3rem'
                   }}
                   alt="Sample"
                 />
                 <div className="card-body p-4 p-md-5">
-                  <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 text">
-                    Configure Your Plugin
-                  </h3>
+                  <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Configure Your Plugin</h3>
                   <form className="px-md-2">
-                    <div className="form-outline mb-4">
-                      <input
-                        type="text"
-                        id="form3Example1q"
-                        className="form-control"
-                      />
+                    <div className="mb-4">
                       <label className="form-label" htmlFor="form3Example1q">
-                        Name
+                        Site Name
                       </label>
+                      <input type="text" id="form3Example1q" className="form-control" />
                     </div>
-                    <div className="row">
-                      <div className="col-md-6 mb-4">
-                        <div className="form-outline datepicker">
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="exampleDatepicker1"
-                          />
-                          <label
-                            htmlFor="exampleDatepicker1"
-                            className="form-label"
-                          >
-                            Select a date
-                          </label>
-                        </div>
-                      </div>
-                      <div className="col-md-6 mb-4">
-                        <select className="select">
+                    <div className="mb-4">
+                      <label className="form-label" htmlFor="form3Example1q">
+                        Site URL
+                      </label>
+                      <input type="text" id="form3Example1q" className="form-control" />
+                    </div>
+                    
+                    <div className="mb-4">
+                      <label className="form-label" htmlFor="form3Example1q">
+                        Theme
+                      </label>
+                      <select className="form-control">
                           <option value={1} disabled="">
                             Gender
                           </option>
@@ -103,39 +83,14 @@ const SearchSetup = () => {
                           <option value={3}>Male</option>
                           <option value={4}>Other</option>
                         </select>
-                      </div>
                     </div>
                     <div className="mb-4">
-                      <select className="select">
-                        <option value={1} disabled="">
-                          Class
-                        </option>
-                        <option value={2}>Class 1</option>
-                        <option value={3}>Class 2</option>
-                        <option value={4}>Class 3</option>
-                      </select>
+                      <label className="form-label" htmlFor="form3Example1q">
+                        Search Note
+                      </label>
+                      <textarea type="text" id="form3Example1q" className="form-control"></textarea>
                     </div>
-                    <div className="row mb-4 pb-2 pb-md-0 mb-md-5">
-                      <div className="col-md-6">
-                        <div className="form-outline">
-                          <input
-                            type="text"
-                            id="form3Example1w"
-                            className="form-control"
-                          />
-                          <label
-                            className="form-label"
-                            htmlFor="form3Example1w"
-                          >
-                            Registration code
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <button
-                      type="submit"
-                      className="btn btn-success btn-lg mb-1"
-                    >
+                    <button type="submit" className="btn btn-success btn-lg mb-1">
                       Submit
                     </button>
                   </form>
