@@ -1,19 +1,23 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   return (
+
+    
     <div id="preview" className="preview">
     <div style={{ display: "none" }} />
     <div>
       <div
         data-draggable="true"
         className=""
-        style={{ position: "relative" }}
+        style={{ position: "relative",
+                  margin: 'auto 30px'  }}
         draggable="false"
       >
         {/**/}
         {/**/}
-        <section draggable="false" className="container pt-5" data-v-271253ee="">
+        <section draggable="false" className=" pt-5" data-v-271253ee="">
           <section className="mb-10 text-center">
             <div
               className="p-5 bg-image"
@@ -46,7 +50,9 @@ const Home = () => {
                       draggable="false"
                       style={{}}
                     >
+                       <NavLink className="nav-link" to="/main/signin">
                       Get started
+                      </NavLink>
                     </a>
                   </div>
                 </div>
@@ -80,7 +86,7 @@ const Home = () => {
                 </div>
                 <div className="col-lg-6 col-xl-8">
                   <div className="card-body px-4 py-5 px-md-5">
-                    <h2 className="fw-bold">
+                    <h2 className="fw-bold text-dark">
                       What's the secret of the great taste?
                     </h2>
                     <p className="text-uppercase text-danger fw-bold mb-4">
@@ -122,7 +128,7 @@ const Home = () => {
         {/**/}
         <section draggable="false" className="container pt-5" data-v-271253ee="">
           <section className="mb-10">
-            <h2 className="fw-bold mb-5 text-center">Projects we are proud of</h2>
+            <h2 className="fw-bold mb-5 text-center text-dark">Projects we are proud of</h2>
             <div className="row gx-lg-5 align-items-center">
               <div className="col-lg-5 mb-5 mb-lg-0">
                 <div

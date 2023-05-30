@@ -10,7 +10,7 @@ const SearchSetup = () => {
     initialValues: {
       siteName: '',
       siteUrl: '',
-      theme : '',
+      theme: '',
       created_at: new Date()
     },
     onSubmit: async (values, { resetForm, setSubmitting }) => {
@@ -56,40 +56,62 @@ const SearchSetup = () => {
                   alt="Sample"
                 />
                 <div className="card-body p-4 p-md-5">
-                  <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Configure Your Plugin</h3>
+                  <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 text-black">Configure Your Plugin</h3>
                   <form className="px-md-2">
+                   
                     <div className="mb-4">
                       <label className="form-label" htmlFor="form3Example1q">
                         Site Name
                       </label>
-                      <input type="text" id="form3Example1q" className="form-control" />
+                      <input
+                        type="text"
+                        id="name"
+                        onChange={setupForm.handleChange}
+                        value={setupForm.values.name}
+                        className="form-control"
+                        placeholder="Site Name" />
                     </div>
+
+
+
                     <div className="mb-4">
                       <label className="form-label" htmlFor="form3Example1q">
                         Site URL
                       </label>
-                      <input type="text" id="form3Example1q" className="form-control" />
+                      <input
+                        type="text"
+                        id="url"
+                        onChange={setupForm.handleChange}
+                        value={setupForm.values.name}
+                        className="form-control"
+                        placeholder="URL" />
                     </div>
-                    
+
                     <div className="mb-4">
                       <label className="form-label" htmlFor="form3Example1q">
                         Theme
                       </label>
                       <select className="form-control">
-                          <option value={1} disabled="">
-                            Gender
-                          </option>
-                          <option value={2}>Female</option>
-                          <option value={3}>Male</option>
-                          <option value={4}>Other</option>
-                        </select>
+                        <option value={1} disabled="">
+                          Gender
+                        </option>
+                        <option value={2}>Female</option>
+                        <option value={3}>Male</option>
+                        <option value={4}>Other</option>
+                      </select>
                     </div>
                     <div className="mb-4">
                       <label className="form-label" htmlFor="form3Example1q">
                         Search Note
                       </label>
-                      <textarea type="text" id="form3Example1q" className="form-control"></textarea>
+                      <input type="text"
+                        id="search note"
+                        onChange={setupForm.handleChange}
+                        value={setupForm.values.name}
+                        className="form-control"
+                        placeholder="search note" />
                     </div>
+
                     <button type="submit" className="btn btn-success btn-lg mb-1">
                       Submit
                     </button>
@@ -98,9 +120,9 @@ const SearchSetup = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </div >
+      </section >
+    </div >
   );
 };
 

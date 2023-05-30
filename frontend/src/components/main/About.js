@@ -4,7 +4,6 @@ const About = () => {
   return (
     <div class="bg-image"
       style={{ backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img//about-us BG.jpg')`, backgroundSize: 'cover', backgroundPosition: 'bottom' }}>
-      {/* <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}></div> */}
 
 
 

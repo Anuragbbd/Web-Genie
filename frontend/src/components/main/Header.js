@@ -29,7 +29,9 @@ const Header = () => {
               loading="lazy"
             />
             
-            <h1  style={{color:"green"}} >WEBGENIE</h1>
+            <NavLink className="nav-link" to="/main/home">
+                 <h1 style={{color:"green"}}>WEBGENIE</h1> 
+                </NavLink> 
           </a>
           {/* Left links */}
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">

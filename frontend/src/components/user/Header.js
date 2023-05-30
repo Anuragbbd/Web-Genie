@@ -66,11 +66,7 @@ const Header = () => {
                   Manage Webpage Data
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/user/manageorders">
-                  ManageOrders
-                </NavLink>
-              </li>
+              
               <li className="nav-item">
                 <NavLink className="nav-link" to="/user/searchsetup">
                   Setup Search System
