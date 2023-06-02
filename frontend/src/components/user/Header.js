@@ -74,7 +74,12 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/user/toursetup">
-                  Setup Search System
+                  Setup Tour System
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/user/managetour">
+                  Manage Tour Plugins
                 </NavLink>
               </li>
             </ul>
