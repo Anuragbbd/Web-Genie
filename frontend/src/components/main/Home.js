@@ -23,7 +23,7 @@ const Home = () => {
               className="p-5 bg-image"
               style={{
                 backgroundImage:
-                  'url("https://mdbcdn.b-cdn.net/img/new/slides/006.webp")',
+                  'url("https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")',
                 height: 500,
                 backgroundSize: "cover",
                 backgroundPosition: "50% 50%",
@@ -39,8 +39,8 @@ const Home = () => {
                   <div className="text-white">
                     <h2 className="my-md-5 mb-4 px-5 display-4 fw-bold ls-tight">
                       {" "}
-                      <span>Are you ready</span> <br />{" "}
-                      <span className="">for an adventure?</span>{" "}
+                      <span>Web Genie</span> <br />{" "}
+                      <span className=""></span>{" "}
                     </h2>{" "}
                     <a
                       className="btn  btn-outline-light btn-lg py-3 px-5 mb-5"
@@ -87,7 +87,7 @@ const Home = () => {
                 <div className="col-lg-6 col-xl-8">
                   <div className="card-body px-4 py-5 px-md-5">
                     <h2 className="fw-bold text-dark">
-                      What's the secret of the great taste?
+                      Introduction
                     </h2>
                     <p className="text-uppercase text-danger fw-bold mb-4">
                       {" "}
