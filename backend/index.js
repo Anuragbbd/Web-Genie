@@ -13,7 +13,7 @@ const app = express();
 
 app.use(cors(
     {
-        origin : 'http://localhost:3000',
+        origin : '*',
         credentials : true
     }
 ));
@@ -24,6 +24,8 @@ app.use('/search', searchRouter);
 app.use('/webpage', webpageRouter);
 app.use('/tour', tourRouter);
 
+app.use(express.static('./static/uploads'));
+app.use(express.static('./scripts'));
 
 app.get('/', (req, res) => {
     console.log('Request at index');

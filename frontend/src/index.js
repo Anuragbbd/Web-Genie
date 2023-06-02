@@ -30,7 +30,7 @@ if(searchEl){
 const tourEl = document.getElementById('tourPlugin');
 if(tourEl){
   const tour = ReactDOM.createRoot(tourEl);
-  const pluginId = searchEl.getAttribute('pluginId');
+  const pluginId = tourEl.getAttribute('pluginId');
   tour.render(
     <React.StrictMode>
       <ViewTour pluginId={pluginId} />
