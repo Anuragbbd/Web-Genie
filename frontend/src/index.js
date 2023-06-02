@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import SearchPlugin from './plugin';
+import ViewTour from './components/user/ViewTour';
 
 
 const rootEl = document.getElementById('root');
@@ -22,6 +23,17 @@ if(searchEl){
   search.render(
     <React.StrictMode>
       <SearchPlugin userid={userid} />
+    </React.StrictMode>
+  );
+}
+
+const tourEl = document.getElementById('tourPlugin');
+if(tourEl){
+  const tour = ReactDOM.createRoot(tourEl);
+  const pluginId = searchEl.getAttribute('pluginId');
+  tour.render(
+    <React.StrictMode>
+      <ViewTour pluginId={pluginId} />
     </React.StrictMode>
   );
 }

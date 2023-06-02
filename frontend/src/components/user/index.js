@@ -8,7 +8,7 @@ const User = () => {
     <div className="module">
       <Header />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

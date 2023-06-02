@@ -19,6 +19,9 @@ import SearchSetup from "./components/user/SearchSetup";
 import SearchSystem from "./plugin/SearchSystem";
 import About from "./components/main/About";
 import WebpageManager from "./components/user/WebpageManager";
+import TourGenerator from "./components/user/TourGenerator";
+import ManageTour from "./components/user/ManageTours";
+import ViewTour from "./components/user/ViewTour";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(
@@ -64,7 +67,11 @@ function App() {
             >
               <Route path="profile" element={<UserProfile />} />
               <Route path="searchsetup" element={<SearchSetup />} />
+              <Route path="toursetup" element={<TourGenerator />} />
+              <Route path="managetour" element={<ManageTour />} />
+              <Route path="viewtour" element={<ViewTour pluginId={'647979dcb4170d325985d476'} />} />
               <Route path="webpagemanager" element={<WebpageManager />} />
+              <Route path="tour" element={<TourGenerator />} />
             </Route>
             <Route path="search" element={<SearchSystem userid={'6469c8a166bc205c45ea9b23'} />} />
             <Route path="*" element={<NotFound />} />

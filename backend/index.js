@@ -5,6 +5,7 @@ dotenv.config();
 const userRouter = require('./routers/userRouter');
 const searchRouter = require('./routers/searchRouter');
 const webpageRouter = require('./routers/webpageRouter');
+const tourRouter = require('./routers/tourRouter');
 const cors = require('cors');
 const { PORT } = require('./config');
 
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use('/user', userRouter);
 app.use('/search', searchRouter);
 app.use('/webpage', webpageRouter);
+app.use('/tour', tourRouter);
 
 
 app.get('/', (req, res) => {
