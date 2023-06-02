@@ -23,7 +23,7 @@ const Home = () => {
               className="p-5 bg-image"
               style={{
                 backgroundImage:
-                  'url("https://mdbcdn.b-cdn.net/img/new/slides/006.webp")',
+                  'url("https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")',
                 height: 500,
                 backgroundSize: "cover",
                 backgroundPosition: "50% 50%",
@@ -39,8 +39,8 @@ const Home = () => {
                   <div className="text-white">
                     <h2 className="my-md-5 mb-4 px-5 display-4 fw-bold ls-tight">
                       {" "}
-                      <span>Are you ready</span> <br />{" "}
-                      <span className="">for an adventure?</span>{" "}
+                      <span>Web Genie</span> <br />{" "}
+                      <span className=""></span>{" "}
                     </h2>{" "}
                     <a
                       className="btn  btn-outline-light btn-lg py-3 px-5 mb-5"
@@ -49,7 +49,7 @@ const Home = () => {
                       aria-controls="#picker-editor"
                       draggable="false"
                       style={{}}
-                    >
+                    > 
                        <NavLink className="nav-link" to="/main/signin">
                       Get started
                       </NavLink>
@@ -87,7 +87,7 @@ const Home = () => {
                 <div className="col-lg-6 col-xl-8">
                   <div className="card-body px-4 py-5 px-md-5">
                     <h2 className="fw-bold text-dark">
-                      What's the secret of the great taste?
+                      Introduction
                     </h2>
                     <p className="text-uppercase text-danger fw-bold mb-4">
                       {" "}
@@ -98,22 +98,11 @@ const Home = () => {
                       <span />{" "}
                     </p>
                     <p className="text-muted mb-4">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Earum maxime voluptas ipsam aliquam itaque cupiditate
-                      provident architecto expedita harum culpa odit, inventore
-                      rem molestias laborum repudiandae corporis pariatur quo eius
-                      iste! Quaerat, assumenda voluptates! Molestias, recusandae?
-                      Maxime fuga omnis ducimus.
+                    Voice assistants are software agents that can interpret human speech and respond via synthesized voices.Recently, there has been a surge in the use of voice assistants to create conversational experiences, particularly in the tourism industry. One such tool is Voiceflow , a collaboration platform that enables conversational AI teams to design, prototype, and launch amazing conversational experiences faster. In this tutorial, you can learn how to code and build your own AI virtual voice assistant using Python.With the help of this tutorial, you can program your own voice assistant to generate tours based on user preferences, search for nearby attractions, and provide information about popular tourist destinations.
                     </p>
                     <p className="mb-0">
-                      Commodi ut nisi assumenda alias maxime necessitatibus ad rem
-                      repellat explicabo, reiciendis illum suscipit iusto?
-                      Provident dignissimos similique, reiciendis inventore
-                      accusantium unde mollitia, deleniti quae atque error id
-                      perspiciatis illum. Laboriosam aperiam ab illo dignissimos
-                      obcaecati corporis similique a odio, optio iste quis placeat
-                      alias amet rerum sint quos dolor pariatur inventore possimus
-                      ad consequuntur fugiat perferendis consectetur laudantium.
+                    Voice assistant-based tour generator that aims to provide users with a personalized and interactive tour experience. Using the power of conversational AI, the voice assistant will ask users about their preferences, interests, and budget to generate a custom tour itinerary. It will also provide information about popular tourist destinations and answer any questions the user may have.
+                    
                     </p>
                   </div>
                 </div>
