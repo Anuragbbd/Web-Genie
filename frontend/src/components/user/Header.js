@@ -72,6 +72,11 @@ const Header = () => {
                   Setup Search System
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/user/toursetup">
+                  Setup Search System
+                </NavLink>
+              </li>
             </ul>
             {/* Left links */}
           </div>
