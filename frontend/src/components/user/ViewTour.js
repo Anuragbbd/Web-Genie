@@ -29,10 +29,10 @@ const ViewTour = ({pluginId}) => {
             tourData!==null && <Joyride steps={tourData.steps} />
         }
 
-        <h1>Test Tour</h1>
+        {/* <h1>Test Tour</h1>
 
         <h3 className='step1'>Step 1</h3>
-        <button className='step2 float-end'>Step 2</button>
+        <button className='step2 float-end'>Step 2</button> */}
     </div>
   )
 }
