@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import annyang from 'annyang';
-import { useNavigate } from 'react-router-dom';
 
-const SearchSystem = ({userid}) => {
+const SearchSystem = ({ userid }) => {
   // const [annyang, setAnnyang] = useState(window.annyang);
 
-  const navigate = useNavigate();
   const url = 'http://localhost:5000';
 
   const [webpagesList, setWebpagesList] = useState([]);
@@ -16,12 +14,11 @@ const SearchSystem = ({userid}) => {
     console.log(data.result);
     setWebpagesList(data.result);
     // return data;
-  }
+  };
 
   useEffect(() => {
     fetchWebpagesData();
-  }, [])
-  
+  }, []);
 
   useEffect(() => {
     //   initVoiceListen();
@@ -29,29 +26,6 @@ const SearchSystem = ({userid}) => {
   }, []);
 
   const [listening, setListening] = useState(false);
-
-  // const webpagesList = [
-  //   {
-  //     name: 'About',
-  //     address: '/main/about'
-  //   },
-  //   {
-  //     name: 'Contact',
-  //     address: '/main/contact'
-  //   },
-  //   {
-  //     name: 'Home',
-  //     address: '/main/home'
-  //   },
-  //   {
-  //     name: 'Signin',
-  //     address: '/main/signin'
-  //   },
-  //   {
-  //     name: 'Signup',
-  //     address: '/main/signup'
-  //   }
-  // ];
 
   const init = () => {
     const commands = {
@@ -65,14 +39,18 @@ const SearchSystem = ({userid}) => {
       },
       'open :pagename page': (pagename) => {
         console.log(pagename);
-        // console.log(webpagesList[0].keywords[0].split(',').map(key => key.trim().toLowerCase()).includes(pagename.toLowerCase()));
-        const webpage = webpagesList.find((w) => w.keywords[0].split(',').map(key => key.trim().toLowerCase()).includes(pagename.toLowerCase()));
+        const webpage = webpagesList.find((w) =>
+          w.keywords[0]
+            .split(',')
+            .map((key) => key.trim().toLowerCase())
+            .includes(pagename.toLowerCase())
+        );
         console.log(webpage);
         if (webpage) {
           console.log(`Opening ${webpage.title} Page`);
           speak(`Opening ${webpage.title} Page`);
           setTimeout(() => {
-            navigate('/main'+webpage.address);
+            window.open(webpage.url);
           }, 2000);
         }
       }

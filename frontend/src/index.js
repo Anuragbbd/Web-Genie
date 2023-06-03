@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import SearchPlugin from './plugin';
 import ViewTour from './components/user/ViewTour';
+import SearchSystem from './plugin/SearchSystem';
 
 
 const rootEl = document.getElementById('root');
@@ -22,7 +23,7 @@ if(searchEl){
   const userid = searchEl.getAttribute('userid');
   search.render(
     <React.StrictMode>
-      <SearchPlugin userid={userid} />
+      <SearchSystem userid={userid} />
     </React.StrictMode>
   );
 }

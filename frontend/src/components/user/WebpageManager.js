@@ -23,7 +23,7 @@ const WebpageManager = () => {
       }
     });
     console.log(res.status);
-    if (res.status === 201) {
+    if (res.status === 200) {
       const data = await res.json();
       console.log(data);
       fetchWebpagesData();
@@ -46,7 +46,7 @@ const WebpageManager = () => {
           <td>{webpage.keywords}</td>
           <td>
             <button
-              className="btn btn-primary"
+              className="btn btn-primary me-2"
               onClick={() => {
                 editWebpage(webpage._id);
               }}
