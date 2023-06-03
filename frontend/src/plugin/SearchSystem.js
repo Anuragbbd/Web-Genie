@@ -1,33 +1,47 @@
 import React, { useEffect, useState } from 'react';
 import annyang from 'annyang';
+import './plugin.css';
 
-const SearchSystem = ({ userid }) => {
+const SearchSystem = ({ userid, pluginid }) => {
   // const [annyang, setAnnyang] = useState(window.annyang);
 
   const url = 'http://localhost:5000';
 
   const [webpagesList, setWebpagesList] = useState([]);
+  const [pluginData, setPluginData] = useState(null);
+
+  const [modalDisplay, setModalDisplay] = useState('none');
 
   const fetchWebpagesData = async () => {
     const response = await fetch(`${url}/webpage/getbyuser/${userid}`);
     const data = await response.json();
     console.log(data.result);
     setWebpagesList(data.result);
+    init(data.result);
+    // return data;
+  };
+
+  const fetchPluginData = async () => {
+    const response = await fetch(`${url}/search/getbyid/${pluginid}`);
+    const data = await response.json();
+    console.log(data.result);
+    setPluginData(data.result);
     // return data;
   };
 
   useEffect(() => {
     fetchWebpagesData();
+    fetchPluginData();
   }, []);
 
   useEffect(() => {
     //   initVoiceListen();
-    init();
+    // init();
   }, []);
 
   const [listening, setListening] = useState(false);
 
-  const init = () => {
+  const init = (webpages) => {
     const commands = {
       hello: () => {
         console.log('Hello!');
@@ -39,18 +53,20 @@ const SearchSystem = ({ userid }) => {
       },
       'open :pagename page': (pagename) => {
         console.log(pagename);
-        const webpage = webpagesList.find((w) =>
-          w.keywords[0]
-            .split(',')
-            .map((key) => key.trim().toLowerCase())
-            .includes(pagename.toLowerCase())
-        );
+        // console.log(webpages);
+        const webpage = webpages.find((w) =>{
+          const keys = w.keywords[0]
+          .split(',')
+          .map((key) => key.trim().toLowerCase())
+          console.log(keys);
+          return keys.includes(pagename.toLowerCase())
+        })
         console.log(webpage);
         if (webpage) {
           console.log(`Opening ${webpage.title} Page`);
           speak(`Opening ${webpage.title} Page`);
           setTimeout(() => {
-            window.open(webpage.url);
+            window.open(pluginData.siteUrl+'/'+webpage.url);
           }, 2000);
         }
       }
@@ -105,37 +121,51 @@ const SearchSystem = ({ userid }) => {
     }, 5000);
   };
 
+  //   const openModalBtn = document.getElementById('openModalBtn');
+  const modal = document.getElementById('my-modal');
+  // const closeBtn = document.getElementsByClassName('my-close')[0];
+
+  // openModalBtn.addEventListener('click', () => {
+  //   modal.style.display = 'block';
+  // });
+
+  // closeBtn.addEventListener('click', () => {
+  //   modal.style.display = 'none';
+  // });
+
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      setModalDisplay('none');
+    }
+  });
+
   return (
     <div>
-      <div className="container">
-        <button onClick={() => speak('Here are the search results')}>Speak</button>
-        <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
-                  Add New Webpage
-                </h5>
-                <button type="button" className="btn-close" data-mdb-dismiss="modal" aria-label="Close" />
-              </div>
-              <div className="modal-body">
-                <input className="form-control form-control-lg" />
-                <button className="btn btn-primary" onClick={startListening}>
-                  {listening ? 'Listening...' : 'Click To Speak'}
-                </button>
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-mdb-dismiss="modal">
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
+      <div id="modal" class="my-modal" style={{ display: modalDisplay }}>
+        <div class="my-modal-content">
+          <span class="my-close" onClick={(e) => setModalDisplay('none')}>
+            &times;
+          </span>
+          {
+            pluginData && (
+              <>
+                <h3>{pluginData.note}</h3>
+                <input className='form-control' placeholder='Search here..' />
+                or
+                <h4>Speak Something</h4>
+              </>
+            )
+          }
         </div>
+      </div>
+      <button id="openModalBtn" onClick={(e) => setModalDisplay('block')}>
+        Open Modal
+      </button>
 
-        <button type="button" className="btn btn-primary float-end my-4" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-          <i className="fas fa-search"></i> Search
-        </button>
+
+      
+      <div className="container">
+       <img src="https://wallpaperaccess.com/full/343990.jpg" />
       </div>
     </div>
   );

@@ -10,12 +10,13 @@ const SearchSetup = () => {
     initialValues: {
       siteName: '',
       siteUrl: '',
-      theme: '',
-      created_at: new Date()
+      note: '',
+      created_at: new Date(),
+      updated_at: new Date()
     },
     onSubmit: async (values, { resetForm, setSubmitting }) => {
       console.log(values);
-      const res = await fetch(`${apiUrl}/user/add`, {
+      const res = await fetch(`${apiUrl}/search/add`, {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {
@@ -57,7 +58,7 @@ const SearchSetup = () => {
                 />
                 <div className="card-body p-4 p-md-5">
                   <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 text-black">Configure Your Plugin</h3>
-                  <form className="px-md-2">
+                  <form className="px-md-2" onSubmit={setupForm.handleSubmit}>
                    
                     <div className="mb-4">
                       <label className="form-label" htmlFor="form3Example1q">
@@ -65,9 +66,9 @@ const SearchSetup = () => {
                       </label>
                       <input
                         type="text"
-                        id="name"
+                        id="siteName"
                         onChange={setupForm.handleChange}
-                        value={setupForm.values.name}
+                        value={setupForm.values.siteName}
                         className="form-control"
                         placeholder="Site Name" />
                     </div>
@@ -80,34 +81,22 @@ const SearchSetup = () => {
                       </label>
                       <input
                         type="text"
-                        id="url"
+                        id="siteUrl"
                         onChange={setupForm.handleChange}
-                        value={setupForm.values.name}
+                        value={setupForm.values.siteUrl}
                         className="form-control"
                         placeholder="URL" />
                     </div>
 
-                    <div className="mb-4">
-                      <label className="form-label" htmlFor="form3Example1q">
-                        Theme
-                      </label>
-                      <select className="form-control">
-                        <option value={1} disabled="">
-                          Gender
-                        </option>
-                        <option value={2}>Female</option>
-                        <option value={3}>Male</option>
-                        <option value={4}>Other</option>
-                      </select>
-                    </div>
+                  
                     <div className="mb-4">
                       <label className="form-label" htmlFor="form3Example1q">
                         Search Note
                       </label>
                       <input type="text"
-                        id="search note"
+                        id="note"
                         onChange={setupForm.handleChange}
-                        value={setupForm.values.name}
+                        value={setupForm.values.note}
                         className="form-control"
                         placeholder="search note" />
                     </div>

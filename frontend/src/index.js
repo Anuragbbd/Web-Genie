@@ -21,9 +21,10 @@ const searchEl = document.getElementById('search');
 if(searchEl){
   const search = ReactDOM.createRoot(searchEl);
   const userid = searchEl.getAttribute('userid');
+  const pluginid = searchEl.getAttribute('pluginid');
   search.render(
     <React.StrictMode>
-      <SearchSystem userid={userid} />
+      <SearchSystem userid={userid} pluginid={pluginid} />
     </React.StrictMode>
   );
 }
