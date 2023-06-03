@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "install": "^0.13.0",
+    "joyride": "^0.1.4",
+    "react": "^17.0.2"
+  }
+}
