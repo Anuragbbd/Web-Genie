@@ -13,7 +13,7 @@ import NotFound from "./components/NotFound";
 import AdminAuth from "./auth/AdminAuth";
 import UserProvider from "./context/UserProvider";
 import AdminProvider from "./context/AdminProvider";
-import { useState } from "react";
+import React, { useState } from "react";
 import Contact from "./components/main/Contact";
 import SearchSetup from "./components/user/SearchSetup";
 import SearchSystem from "./plugin/SearchSystem";
