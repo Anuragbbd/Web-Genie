@@ -35,8 +35,7 @@ const ManageTour = () => {
           <div className="card-body">
             <h5 className="card-title">{tour.title}</h5>
             <h6>Copy Plugin Code </h6>
-            <textarea value={`<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet"/>
-<div id="tourPlugin" pluginId="${tour._id}"></div>
+            <textarea value={`<div id="tourPlugin" pluginId="${tour._id}"></div>
 <script src="http://localhost:5000/index.js"></script>`}></textarea>
             <button className='btn btn-secondary'><i class="fas fa-copy"></i></button>
           </div>
