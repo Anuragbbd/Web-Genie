@@ -66,7 +66,7 @@ const SearchSystem = ({ userid, pluginid }) => {
           console.log(`Opening ${webpage.title} Page`);
           speak(`Opening ${webpage.title} Page`);
           setTimeout(() => {
-            window.open(pluginData.siteUrl+'/'+webpage.url);
+            window.open('http://127.0.0.1:5500/'+webpage.address);
           }, 2000);
         }
       }
@@ -141,7 +141,7 @@ const SearchSystem = ({ userid, pluginid }) => {
 
   return (
     <div>
-      <div id="modal" class="my-modal" style={{ display: modalDisplay }}>
+      {/* <div id="modal" class="my-modal" style={{ display: modalDisplay }}>
         <div class="my-modal-content">
           <span class="my-close" onClick={(e) => setModalDisplay('none')}>
             &times;
@@ -157,16 +157,16 @@ const SearchSystem = ({ userid, pluginid }) => {
             )
           }
         </div>
-      </div>
-      <button id="openModalBtn" onClick={(e) => setModalDisplay('block')}>
+      </div> */}
+      {/* <button id="openModalBtn" onClick={(e) => setModalDisplay('block')}>
         Open Modal
-      </button>
+      </button> */}
 
 
       
-      <div className="container">
+      {/* <div className="container">
        <img src="https://wallpaperaccess.com/full/343990.jpg" />
-      </div>
+      </div> */}
     </div>
   );
 };

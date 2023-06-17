@@ -170,6 +170,14 @@ const WebpageManager = () => {
       </>
 
       <div className="container">
+        <div className='card my-3'>
+          <div className='card-header'>
+            <h4>Plugin Code</h4>
+          </div>
+        <div className='card-body'>
+          <textarea className='form-control' value={`<div id="search" userid="${currentuser._id}" pluginid="6485dc35e2aea028b9901f00"></div>`}></textarea>
+        </div>
+        </div>
         <div className="card">
           <div className="card-header">
             <h3>Manage Your Website Pages</h3>

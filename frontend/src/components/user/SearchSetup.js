@@ -28,7 +28,7 @@ const SearchSetup = () => {
         Swal.fire({
           icon: 'success',
           title: 'Success',
-          text: 'User Registered Successfully!!'
+          text: 'Plugin Details Stored Successfully!!'
         });
       } else {
         Swal.fire({

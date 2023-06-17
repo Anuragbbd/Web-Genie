@@ -14,6 +14,10 @@ import NotFound from "./components/NotFound";
 import AdminAuth from "./auth/AdminAuth";
 import UserProvider from "./context/UserProvider";
 import AdminProvider from "./context/AdminProvider";
+<<<<<<< HEAD
+=======
+import React, { useState } from "react";
+>>>>>>> b2efa60549e0bd0aafbe099eeb79c12ee8518d98
 import Contact from "./components/main/Contact";
 import SearchSetup from "./components/user/SearchSetup";
 import SearchSystem from "./plugin/SearchSystem";
